@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -23,18 +23,11 @@ export const Wallet: FC<Props> = ({ children }) => {
     >
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "10px",
-            }}
-          >
+          <nav className={"w-screen flex gap-4 justify-end p-4"}>
             <WalletMultiButton />
             <WalletDisconnectButton />
-            {children}
-          </div>
+          </nav>
+          <div className={"mt-[120px]"}>{children}</div>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
