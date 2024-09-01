@@ -5,12 +5,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div
-      className={
-        "h-screen w-screen bg-[radial-gradient(circle_at_left,_var(--tw-gradient-stops))] from-[#ff218c]  to-[#ce90f4]"
-      }
-    >
+    <div className={"h-screen w-screen bg-gray-900"}>
       <Wallet>
+        <Airdrop />
+        <Airdrop />
         <Airdrop />
       </Wallet>
       <ToastContainer position={"bottom-center"} />
