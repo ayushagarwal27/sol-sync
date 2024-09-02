@@ -37,10 +37,16 @@ const Airdrop = () => {
     }
   }
 
+  if (!wallet.publicKey) {
+    return null;
+  }
+
   return (
     <Card className={"bg-black text-white"}>
       <CardHeader>
-        <CardTitle className={"text-center"}>Airdrop</CardTitle>
+        <CardTitle className={"text-center font-semibold"}>
+          Request Airdrop
+        </CardTitle>
         {/*<CardDescription>Card Description</CardDescription>*/}
       </CardHeader>
       <CardContent className={"mt-4"}>
@@ -59,7 +65,7 @@ const Airdrop = () => {
           onClick={sendAirdropToUser}
           className={"bg-gray-800 w-full"}
         >
-          Send
+          Confirm
         </Button>
       </CardFooter>
     </Card>

@@ -5,7 +5,6 @@ import {
 } from "@solana/wallet-adapter-react";
 import {
   WalletModalProvider,
-  WalletDisconnectButton,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import "@solana/wallet-adapter-react-ui/styles.css";
@@ -25,35 +24,29 @@ export const Wallet: FC<Props> = ({ children }) => {
         <WalletModalProvider>
           <nav
             className={
-              "w-screen fixed top-0 flex gap-4 justify-end px-4 py-2 drop-shadow-2xl bg-black/40"
+              "w-screen fixed top-0  gap-4 py-2 drop-shadow-2xl bg-black/40 "
             }
           >
-            <WalletMultiButton
-              style={{
-                background: "black",
-                color: "white",
-                border: "0.3px solid #C0C0C0",
-                borderRadius: 5000,
-                cursor: "pointer",
-              }}
-            />
-            <WalletDisconnectButton
-              style={{
-                background: "black",
-                color: "white",
-                border: "0.3px solid #C0C0C0",
-                borderRadius: 5000,
-                cursor: "pointer",
-              }}
-            />
+            <div className={"container mx-auto flex justify-between"}>
+              <div
+                className={
+                  "flex flex-row items-center text-2xl text-white font-bold"
+                }
+              >
+                SOLSync
+              </div>
+              <WalletMultiButton
+                style={{
+                  background: "black",
+                  color: "white",
+                  border: "0.3px solid #C0C0C0",
+                  borderRadius: 5000,
+                  cursor: "pointer",
+                }}
+              />
+            </div>
           </nav>
-          <div
-            className={
-              "flex gap-4 justify-center align-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            }
-          >
-            {children}
-          </div>
+          {children}
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
