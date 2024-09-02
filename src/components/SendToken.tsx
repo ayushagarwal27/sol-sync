@@ -52,7 +52,7 @@ const SendToken = () => {
   }
 
   return (
-    <Card className={"bg-black text-white w-[600px]"}>
+    <Card className={"bg-black text-white"}>
       <CardHeader>
         <CardTitle className={"text-center"}>Send SOL Token</CardTitle>
         {/*<CardDescription>Card Description</CardDescription>*/}
