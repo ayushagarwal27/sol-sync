@@ -6,10 +6,8 @@ import ShowBalance from "@/components/ShowBalance.tsx";
 import SignMessage from "@/components/SignMessage.tsx";
 import SendToken from "@/components/SendToken.tsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from "react";
 
 function App() {
-  const [tabVal, setTabVal] = useState("info");
   return (
     <div className={"h-screen w-screen bg-gray-900"}>
       <Wallet>
@@ -20,16 +18,20 @@ function App() {
         >
           <Tabs defaultValue={"info"} className="">
             <TabsList
-              className={"w-[400px] bg-black my-2 text-white/80 py-[32px]"}
+              className={"min-w-[500px] bg-black my-2 text-white/80 py-[32px]"}
             >
               <TabsTrigger value="info" className={""}>
                 Info
               </TabsTrigger>
               <TabsTrigger value="airdrop">Airdrop</TabsTrigger>
+              <TabsTrigger value="sign-message">Sign Message</TabsTrigger>
               <TabsTrigger value="sendToken">Send Token</TabsTrigger>
             </TabsList>
             <TabsContent value="info" className={"h-[400px] "}>
               <ShowBalance />
+            </TabsContent>{" "}
+            <TabsContent value="sign-message" className={"h-[400px] "}>
+              <SignMessage />
             </TabsContent>{" "}
             <TabsContent value="sendToken" className={"h-[400px]"}>
               <SendToken />
