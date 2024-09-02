@@ -39,8 +39,12 @@ const SendToken = () => {
     try {
       await wallet.sendTransaction(transaction, connection);
       toast.success("Sent " + amount + " SOL to " + toAddress);
-    } catch (err: { message: string }) {
-      toast.error(err.message);
+    } catch (err) {
+      if (err instanceof Error) {
+        toast.error(err.message);
+      } else {
+        toast.error("Something went wrong!");
+      }
     } finally {
       setToAddress("");
       setAmount(0);
