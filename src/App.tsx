@@ -6,6 +6,7 @@ import ShowBalance from "@/components/ShowBalance.tsx";
 import SignMessage from "@/components/SignMessage.tsx";
 import SendToken from "@/components/SendToken.tsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ShowTokens from "@/components/ShowTokens.tsx";
 
 function App() {
   return (
@@ -31,8 +32,9 @@ function App() {
               <TabsTrigger value="sign-message">Sign Message</TabsTrigger>
               <TabsTrigger value="sendToken">Send Token</TabsTrigger>
             </TabsList>
-            <TabsContent value="info" className={"h-[400px] "}>
+            <TabsContent value="info" className={"h-[400px]"}>
               <ShowBalance />
+              <ShowTokens />
             </TabsContent>{" "}
             <TabsContent value="sign-message" className={"h-[400px] "}>
               <SignMessage />
