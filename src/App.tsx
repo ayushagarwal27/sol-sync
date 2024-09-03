@@ -9,7 +9,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function App() {
   return (
-    <div className={"h-screen w-screen bg-gray-900"}>
+    <div
+      className={
+        "h-screen w-screen bg-gradient-to-r from-slate-900 to-slate-700"
+      }
+    >
       <Wallet>
         <div
           className={

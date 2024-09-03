@@ -24,13 +24,13 @@ export const Wallet: FC<Props> = ({ children }) => {
         <WalletModalProvider>
           <nav
             className={
-              "w-screen fixed top-0  gap-4 py-2 drop-shadow-2xl bg-black/40 "
+              "w-screen fixed top-0  gap-4 py-2 drop-shadow-2xl bg-black/40"
             }
           >
             <div className={"container mx-auto flex justify-between"}>
               <div
                 className={
-                  "flex flex-row items-center text-2xl text-white font-bold"
+                  "flex flex-row items-center text-2xl text-white font-bold bg-gradient-to-r from-blue-400 via-violet-400 to-rose-400 bg-clip-text text-transparent"
                 }
               >
                 SOLSync
