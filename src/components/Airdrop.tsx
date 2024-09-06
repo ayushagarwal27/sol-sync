@@ -38,7 +38,15 @@ const Airdrop = () => {
   }
 
   if (!wallet.publicKey) {
-    return null;
+    return (
+      <p
+        className={
+          "text-2xl text-white text-center bg-gray-900 py-2 rounded-xl"
+        }
+      >
+        Please connect your wallet 🪪
+      </p>
+    );
   }
 
   return (

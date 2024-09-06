@@ -30,10 +30,10 @@ export const Wallet: FC<Props> = ({ children }) => {
             <div className={"container mx-auto flex justify-between"}>
               <div
                 className={
-                  "flex flex-row items-center text-2xl text-white font-bold bg-gradient-to-r from-blue-400 via-violet-400 to-rose-400 bg-clip-text text-transparent"
+                  "flex flex-row items-center text-2xl  font-semibold bg-gradient-to-r from-blue-400 via-violet-400 to-rose-400 bg-clip-text text-transparent"
                 }
               >
-                SOLSync
+                SolSync
               </div>
               <WalletMultiButton
                 style={{
