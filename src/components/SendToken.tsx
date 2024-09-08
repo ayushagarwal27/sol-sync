@@ -22,13 +22,12 @@ const SendToken = () => {
   const { connection } = useConnection();
   const [toAddress, setToAddress] = useState<string>("");
   const [amount, setAmount] = useState(0);
+  const [isSending, setIsSending] = useState(false);
 
   if (!wallet.publicKey) {
     return (
       <p
-        className={
-          "text-2xl text-white text-center bg-gray-900 py-2 rounded-xl"
-        }
+        className={"text-xl text-white text-center bg-gray-900 py-2 rounded-xl"}
       >
         Please connect your wallet 🪪
       </p>
@@ -36,6 +35,7 @@ const SendToken = () => {
   }
 
   async function sendTokens() {
+    setIsSending(true);
     const transaction = new Transaction();
     transaction.add(
       SystemProgram.transfer({
@@ -46,7 +46,7 @@ const SendToken = () => {
     );
     try {
       await wallet.sendTransaction(transaction, connection);
-      toast.success("Sent " + amount + " SOL to " + toAddress);
+      toast.dark("Sent " + amount + " SOL to " + toAddress);
     } catch (err) {
       if (err instanceof Error) {
         toast.error(err.message);
@@ -57,6 +57,7 @@ const SendToken = () => {
       setToAddress("");
       setAmount(0);
     }
+    setIsSending(false);
   }
 
   return (
@@ -68,7 +69,7 @@ const SendToken = () => {
       <CardContent className={"mt-4 flex flex-col gap-3"}>
         <Input
           type={"number"}
-          min={0.01}
+          min={1}
           value={amount}
           placeholder={"Enter SOL amount"}
           className={"bg-purple-50 text-gray-700 px-4 py-2 rounded-lg"}
@@ -87,8 +88,9 @@ const SendToken = () => {
           variant={"outline"}
           onClick={sendTokens}
           className={"bg-gray-800 w-full"}
+          disabled={isSending}
         >
-          Send
+          {isSending ? "Sending..." : "Send"}
         </Button>
       </CardFooter>
     </Card>

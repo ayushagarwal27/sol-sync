@@ -12,7 +12,7 @@ function App() {
   return (
     <div
       className={
-        "h-screen w-screen bg-gradient-to-r from-slate-900 to-slate-700"
+        "h-screen w-screen bg-[radial-gradient(circle_at_left,_var(--tw-gradient-stops))] from-[#4a3368]  to-[#191e1c]"
       }
     >
       <Wallet>

@@ -32,7 +32,7 @@ const ShowTokens = () => {
     const nextToken: TokenType = [];
     tokenAccounts.value.forEach((tokenAccount) => {
       const accountData = AccountLayout.decode(tokenAccount.account.data);
-      console.log(accountData);
+      // console.log(accountData);
       nextToken.push({
         tokenKey: accountData.mint.toString(),
         tokenAmount: Number(accountData.amount) / LAMPORTS_PER_SOL,
@@ -40,7 +40,7 @@ const ShowTokens = () => {
     });
     tokenAccountsNormal.value.forEach((tokenAccount) => {
       const accountData = AccountLayout.decode(tokenAccount.account.data);
-      console.log(accountData);
+      // console.log(accountData);
       nextToken.push({
         tokenKey: accountData.mint.toString(),
         tokenAmount: Number(accountData.amount) / LAMPORTS_PER_SOL,
@@ -59,9 +59,7 @@ const ShowTokens = () => {
   if (!wallet.publicKey) {
     return (
       <p
-        className={
-          "text-2xl text-white text-center bg-gray-900 py-2 rounded-xl"
-        }
+        className={"text-xl text-white text-center bg-gray-900 py-2 rounded-xl"}
       >
         Please connect your wallet 🪪
       </p>
@@ -97,7 +95,7 @@ const ShowTokens = () => {
         tokens.map((token) => (
           <a
             className={
-              "flex  text-white px-4 py-1.5 bg-gray-700 items-center rounded-lg mt-3 hover:bg-gray-900 transition hover:scale-105 duration-300 hover:shadow"
+              "flex  text-white px-4 py-1.5 bg-[radial-gradient(circle_at_left,_var(--tw-gradient-stops))] from-[#614486]  to-[#683d78] items-center rounded-lg mt-3 hover:bg-gray-900 transition hover:scale-105 duration-300 hover:shadow"
             }
             key={token.tokenKey}
             href={`https://explorer.solana.com/address/${token.tokenKey}?cluster=devnet`}
