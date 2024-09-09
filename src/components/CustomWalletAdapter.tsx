@@ -24,7 +24,7 @@ export const Wallet: FC<Props> = ({ children }) => {
         <WalletModalProvider>
           <nav
             className={
-              "w-screen fixed top-0  gap-4 py-2 drop-shadow-2xl bg-black/40"
+              "w-screen fixed top-0  gap-4 py-3 pb-4 drop-shadow-2xl bg-black/40"
             }
           >
             <div className={"container mx-auto flex justify-between"}>
